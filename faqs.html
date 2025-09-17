@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQs – NMUC</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    /* ======= THEME (same as index & gallery) ======= */
+    :root{
+      --navy:#022f47;
+      --gold:#d4af37;
+      --soft-blue:#eaf3f7;
+      --bg-overlay: rgba(255,255,255,.9);
+      --radius: 1.25rem;
+      --shadow: 0 10px 24px rgba(0,0,0,.12);
+    }
+
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:#022f47;
+      background: url("images/bgmaritim.jpg") center/cover fixed no-repeat;
+    }
+
+    .page-wrap{
+      backdrop-filter: blur(2px);
+      background: linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,.75));
+      min-height: 100dvh;
+    }
+
+    .glass{ background: var(--bg-overlay); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+    .navbar{ background: var(--navy); }
+    .navbar-brand img{ height: 40px; }
+    .nav-link, .navbar-brand{ color:#fff !important; }
+    .nav-link:hover{ color:var(--gold) !important; }
+
+    /* ===== Section Title (consistent with Index & Gallery) ===== */
+    .section-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+      background: linear-gradient(90deg, #0a4a50, #51aeb4, #ffd54d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Add underline bar below title */
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 200px;
+      height: 6px;
+      margin: 1rem auto 0;
+      background: linear-gradient(90deg, #51aeb4, #ffd54d, #0a4a50);
+      border-radius: 4px;
+    }
+
+    footer{ background: var(--navy); color:#dff7fa; }
+    section{ scroll-margin-top: 80px; }
+
+    /* ===== CONTACT MODAL (unchanged) ===== */
+    .modal-header{ background:var(--navy); color:#fff; }
+    .modal-title{ font-weight:800; }
+    .contact-pill{ background:#f3f6f8; border-radius:999px; padding:.5rem 1rem; display:inline-flex; align-items:center; gap:.5rem; font-weight:600; color:var(--navy); }
+    .contact-list li{ margin-bottom:.35rem; }
+
+    /* ====== FAQs FLIP CARDS ====== */
+    .section-title{ 
+      font-weight:800; 
+      text-align:center; 
+      color:var(--navy);
+      background: linear-gradient(90deg, var(--gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .faq-card{ perspective: 1200px; }
+    .faq-inner{
+      position: relative;
+      width: 100%; height: 220px;
+      transform-style: preserve-3d;
+      transition: transform .7s cubic-bezier(.2,.7,.2,1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    .faq-front, .faq-back{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      padding:1.25rem 1.5rem; border-radius: var(--radius);
+      backface-visibility:hidden; -webkit-backface-visibility:hidden;
+    }
+    .faq-front{ 
+      background: var(--navy); 
+      color:#fff; 
+      flex-direction:column; 
+      gap:.35rem; 
+    }
+    .faq-front .q{ font-weight:800; }
+    .faq-front .chev{ font-size:1.6rem; color:var(--gold); line-height:1; }
+
+    .faq-back{ background: var(--bg-overlay); color:var(--navy); transform: rotateY(180deg); }
+    .faq-back .a{ max-width: 45ch; }
+
+    .faq-inner.flipped{ transform: rotateY(180deg); }
+
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+    <a href="index.html" class="btn btn-outline-light fw-bold">
+  Home
+</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="faqs.html">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Hubungi Kami</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT: FAQs -->
+    <main class="container py-5">
+      <div class="text-center">
+  <h1 class="section-title display-5">FAQs</h1>
+</div>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="faq-inner" tabindex="0" role="button" aria-label="Toggle answer">
+            <div class="faq-front">
+              <div class="chev"><i class="bi bi-chevron-down"></i></div>
+              <div class="q">Siapakah yang layak memohon biasiswa ini?</div>
+            </div>
+            <div class="faq-back">
+              <div class="a">Pelajar yang mempunyai sekurang-kurangnya 3 kredit dalam SPM atau minimum PNGK 2.00 dalam STPM, SVM atau Diploma, atau mempunyai 3M (Membaca, Mengira, Menulis) layak untuk memohon.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="faq-inner" tabindex="0" role="button" aria-label="Toggle answer">
+            <div class="faq-front">
+              <div class="chev"><i class="bi bi-chevron-down"></i></div>
+              <div class="q">Adakah biasiswa meliputi yuran penuh atau separa?</div>
+            </div>
+            <div class="faq-back">
+              <div class="a">Jenis penajaan bergantung pada program &amp; keputusan temuduga. Kebiasaannya merangkumi yuran teras dan elaun tertentu.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="faq-inner" tabindex="0" role="button" aria-label="Toggle answer">
+            <div class="faq-front">
+              <div class="chev"><i class="bi bi-chevron-down"></i></div>
+              <div class="q">Adakah saya perlu menghadiri sesi taklimat dan temuduga biasiswa sebelum memohon?</div>
+            </div>
+            <div class="faq-back">
+              <div class="a">Ya, menghadiri sesi taklimat dan temuduga amat digalakkan kerana ia memberi maklumat penting mengenai proses kemasukan, syarat kelayakan dan manfaat biasiswa.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="faq-inner" tabindex="0" role="button" aria-label="Toggle answer">
+            <div class="faq-front">
+              <div class="chev"><i class="bi bi-chevron-down"></i></div>
+              <div class="q">Apakah peluang kerjaya selepas tamat pengajian?</div>
+            </div>
+            <div class="faq-back">
+              <div class="a">Sektor maritim, O&amp;G dan penerbangan: operasi, teknikal, keselamatan, logistik, pengurusan dan lain-lain.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="faq-inner" tabindex="0" role="button" aria-label="Toggle answer">
+            <div class="faq-front">
+              <div class="chev"><i class="bi bi-chevron-down"></i></div>
+              <div class="q">Bagaimana cara mendaftar sesi taklimat &amp; temuduga?</div>
+            </div>
+            <div class="faq-back">
+              <div class="a">Klik butang <em>Daftar Sekarang</em> pada laman utama dan isi Google Form. Sahkan kehadiran melalui WhatsApp bila diminta.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="faq-inner" tabindex="0" role="button" aria-label="Toggle answer">
+            <div class="faq-front">
+              <div class="chev"><i class="bi bi-chevron-down"></i></div>
+              <div class="q">Dengan siapa pelajar perlu hadir?</div>
+            </div>
+            <div class="faq-back">
+              <div class="a">Pelajar digalakkan untuk hadir bersama ibu bapa atau penjaga.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-4">
+      <div class="container text-center small">
+        <div>© <span id="year"></span> Netherlands Maritime University College (NMUC). All Rights Reserved.</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- CONTACT MODAL -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactLabel">Hubungi Kami</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-4">
+
+          <div class="col-lg-6">
+            <h6 class="fw-bold mb-2">1. Johor Bahru</h6>
+            <p class="mb-3">
+              Netherlands Maritime University College (NMUC)<br>
+              Level 11-14, Kotaraya Office Tower Galleria@Kotaraya, Jalan Abdullah Ibrahim, 80888, Johor
+            </p>
+            <h6 class="fw-bold mb-2">2. Kuala Lumpur</h6>
+            <p class="mb-3">
+              Netherlands Maritime University College (NMUC)<br>
+              Menara PGRM, Level 5, No.8, Jalan Pudu Ulu, Cheras, 56100 Kuala Lumpur
+            </p>
+
+            <div id="contactCarousel" class="carousel slide glass" data-bs-ride="carousel">
+              <div class="carousel-inner poster-frame">
+                <div class="carousel-item active">
+                  <img src="images/bangunannmuc1.jpg" class="d-block w-100" alt="Bangunan NMUC 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/bangunannmuc2.jpg" class="d-block w-100" alt="Bangunan NMUC 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/bangunannmuc3.jpg" class="d-block w-100" alt="Bangunan NMUC 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#contactCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#contactCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <h6 class="fw-bold mb-3">Media Sosial</h6>
+            <div class="d-flex flex-column gap-3">
+              <a class="contact-pill text-decoration-none" href="https://www.facebook.com/" target="_blank" rel="noopener">
+                <i class="bi bi-facebook fs-5"></i> Facebook
+              </a>
+              <a class="contact-pill text-decoration-none" href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <i class="bi bi-instagram fs-5"></i> Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <h6 class="fw-bold mb-3">Nombor Untuk Dihubungi</h6>
+            <ul class="list-unstyled contact-list">
+              <li><i class="bi bi-telephone me-2"></i>Pejabat: <a href="tel:+6070000000" class="link-dark">+60 19-7204720</a></li>
+              <li><i class="bi bi-printer me-2"></i>Faks: 07-2722020</li>
+              <li><i class="bi bi-envelope me-2"></i>Email: <a href="mailto:info@nmuc.edu.my" class="link-dark">ibrahim@nmuc.edu.my</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Flip behaviour
+    function toggleFlip(el){ el.classList.toggle('flipped'); }
+    document.querySelectorAll('.faq-inner').forEach(card =>{
+      card.addEventListener('click', () => toggleFlip(card));
+      card.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleFlip(card); }
+      });
+    });
+  </script>
+</body>
+</html>

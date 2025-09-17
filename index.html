@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biasiswa Industri Maritime, Oil & Gas & Aviation – NMUC</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Icons (optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    /* ======= THEME ======= */
+   :root{
+      --navy:#022f47;   /* deep navy */
+      --gold:#d4af37;   /* premium gold */
+      --aqua:#5ec2d9;   /* aqua highlight */
+      --soft-blue:#e6f3f7;
+      --bg-overlay: rgba(255,255,255,.9);
+      --radius: 1.25rem;
+      --shadow: 0 10px 24px rgba(0,0,0,.15);
+    }
+
+    /* ======= GLOBAL ======= */
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:#08353a;
+      background: linear-gradient(to bottom, #022f47 0%, #034363 100%);
+      background-attachment: fixed;
+    }
+
+    .page-wrap{
+      backdrop-filter: blur(2px);
+      background: linear-gradient(to bottom, rgba(255,255,255,.75), rgba(255,255,255,.65));
+      min-height: 100dvh;
+    }
+
+    .glass{
+      background: var(--bg-overlay);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .navbar{ background: var(--navy); }
+    .navbar-brand img{ height: 42px; }
+    .nav-link, .navbar-brand{ color:#fff !important; font-weight:600; letter-spacing:.3px; }
+    .nav-link:hover{ color:var(--gold) !important; }
+
+
+
+    /* ======= HERO / TITLE ======= */
+.hero-section {
+    position: relative;
+    min-height: 70vh;
+    background: url('images/bgmaritim.jpg') no-repeat center center/cover;
+  }
+  .hero {
+  position: relative;
+  background: linear-gradient(rgba(2, 47, 71, 0.8), rgba(2, 47, 71, 0.8)),
+              url("images/bgmaritim.jpg") no-repeat center center/cover;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+  .hero-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(2,47,71,.6); /* navy overlay */
+  }
+  .hero-title {
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+  }
+  .hero-title .highlight {
+  background: linear-gradient(90deg, #d4af37, #fff);
+  background-clip: text;              /* Standard property */
+  -webkit-background-clip: text;      /* Safari / Chrome */
+  -webkit-text-fill-color: transparent;
+}
+
+  .hero-title::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 6px;
+    margin: 1rem auto 0;
+    background: linear-gradient(90deg, #d4af37, #022f47);
+    border-radius: 4px;
+  }
+
+  .about-box {
+    border-left: 6px solid #d4af37;
+    border-radius: 1rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+    /* ======= INTRO + TOGGLES ======= */
+    .intro h5{ letter-spacing:.3px; color:var(--navy); font-weight:700; }
+    .accordion .accordion-button{
+      background:var(--soft-blue);
+      color:var(--navy);
+      border-radius: var(--radius);
+      font-weight:600;
+    }
+
+    .accordion .accordion-item{ border:0; margin-bottom: .75rem; }
+    .accordion .accordion-body{ background:#fff; border-radius: 0 0 var(--radius) var(--radius); }
+
+    /* ======= EVENT CAROUSEL ======= */
+    .event-card{
+      padding: 1rem; border-radius: var(--radius); background: var(--bg-overlay); box-shadow: var(--shadow);
+    }
+    .poster-frame{ border-radius: var(--radius); overflow: hidden; }
+
+    .cta-btn{ background: var(--teal-900); border:none; }
+    .cta-btn:hover{ background:#0d5e65; }
+
+    /* ======= COUNTERS ======= */
+    .metric{
+      background: var(--bg-overlay);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align:center;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+    .metric .num{ font-size: clamp(2rem, 5vw, 3rem); font-weight:800; color:#0a4a50; }
+    .metric .label{ font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#19666f; }
+
+    /* ======= ALUMNI / FEEDBACK ======= */
+    .alumni-card{
+      background: var(--bg-overlay);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .alumni-card .avatar{
+      width: 120px; height:120px; border-radius: 16px; object-fit:cover;
+    }
+    .alumni-name{ font-weight:800; color:#0a4a50; }
+
+    /* ======= FOOTER ======= */
+    footer{ background: var(--teal-900); color:#dff7fa; }
+
+    /* spacing helper */
+    section{ scroll-margin-top: 80px; }
+
+    /* CONTACT MODAL */
+    .modal-header{ background:#285e80; color:#fff; }
+    .modal-title{ font-weight:800; }
+    .contact-pill{ background:#e9f5f6; border-radius:999px; padding:.5rem 1rem; display:inline-flex; align-items:center; gap:.5rem; font-weight:600; color:#0e2c59; }
+    .contact-list li{ margin-bottom:.35rem; }
+
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a href="index.html" class="btn btn-outline-light fw-bold">
+  Home
+</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Hubungi Kami</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero-section text-center d-flex align-items-center justify-content-center">
+      <div class="overlay"></div>
+      <div class="container position-relative">
+    <h1 class="hero-title display-3 fw-bold">
+      ⚓ BIASISWA INDUSTRI <span class="highlight">MARITIME</span>, OIL &amp; GAS DAN AVIATION
+    </h1>
+    <p class="lead text-light mt-3">Peluang pendidikan dalam bidang Oil & Gas untuk lepasan SPM, STPM &amp; Diploma</p>
+      </div>
+</header>
+
+    <section class="container pb-5">
+      <div class="row g-4 align-items-stretch">
+        
+        <div class="col-lg-10">
+          <div class="about-box glass p-5">
+            <h5 class="fw-bold mb-3">TENTANG KAMI</h5>
+            <p>Biasiswa Industri Maritime, Oil & Gas dan Aviation merupakan peluang pendidikan khas yang ditawarkan oleh Netherlands Maritime University College (NMUC) kepada lepasan SPM, STPM dan Diploma yang berminat melanjutkan pelajaran dalam bidang teknikal serta industri.</p>
+            <p>Biasiswa ini bukan sahaja membantu meringankan beban kewangan pelajar, malah membuka jalan ke arah kerjaya profesional dalam sektor yang semakin berkembang di peringkat tempatan dan antarabangsa.</p>
+            <p class="mb-0">Melalui biasiswa ini, pelajar berpeluang mengikuti pengajian yang berkualiti, menyertai sesi taklimat serta temuduga, dan mendapat pendedahan awal mengenai laluan kerjaya dalam industri maritim, minyak & gas, serta penerbangan.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="accordion" id="infoAccordion">
+        
+            <div class="accordion-item glass">
+              <h2 class="accordion-header" id="headOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="bi bi-chevron-right me-2"></i> Syarat Kelayakan
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headOne" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>SPM – Minimum 3 kredit dalam mana-mana subjek.</li>
+                    <li>STPM / SVM / Diploma – Minimum PNGK 2.00.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass">
+              <h2 class="accordion-header" id="headTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="bi bi-chevron-right me-2"></i> Program Yang Ditawarkan
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headTwo" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Diploma in Maritime Transportation Management</li>
+                    <li>Diploma in Shipping Management</li>
+                    <li>Diploma in Port Management</li>
+                    <li>Diploma in Maritime Law</li>
+                    <li>Diploma in Maritime Occupational Safety and Health</li>
+                    <li>Foundation in Business</li>
+                    <li>Diploma in Airlines Cabin Crew</li>
+                    <li>Diploma in Creative Multimedia (TVET)</li>
+                    <li>Bachelors in Maritime and Logistics</li>
+                    <li>Bachelores in Occupational Safety and Health</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item glass">
+              <h2 class="accordion-header" id="headThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="bi bi-chevron-right me-2"></i> Kelebihan
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headThree" data-bs-parent="#infoAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Yuran pengajian ditanggung sepenuhnya sekaligus mengurangkan beban kewangan pelajar dan keluarga.</li>
+                    <li>Memberi peluang sambung belajar dengan pendidikan berkualiti dalam bidang teknikal dan industri.</li>
+                    <li>Menyediakan laluan kerjaya jelas dalam sektor maritim, oil & gas dan aviation yang sentiasa berkembang.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT EVENT (Carousel + CTA) -->
+    <section class="container pb-5">
+      <div class="event-card">
+        <h2 class="text-center fw-bold mb-4">(CURRENT EVENT) SESI TAKLIMAT &amp; TEMUDUGA</h2>
+        <div id="eventCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+          <div class="carousel-inner poster-frame">
+            <div class="carousel-item active">
+              <img src="https://placehold.co/1200x500?text=Poster+Event+1" class="d-block w-100" alt="Poster Event 1">
+            </div>
+            <div class="carousel-item">
+              <img src="https://placehold.co/1200x500?text=Poster+Event+2" class="d-block w-100" alt="Poster Event 2">
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="text-center">
+          <!-- Update this link to your real Google Form URL -->
+          <a href="https://forms.gle/your-google-form" class="btn btn-lg btn-primary cta-btn px-5 py-3">Daftar Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS / PERCENTAGES -->
+    <section class="container pb-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="metric h-100">
+            <div class="num" data-target="1000">0</div>
+            <div class="label">Pelajar</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="metric h-100">
+            <div class="num" data-target="1000">0</div>
+            <div class="label">Hadir Taklimat</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="metric h-100">
+            <div class="num" data-target="1000">0</div>
+            <div class="label">Pelajar Bekerjaya</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALUMNI / FEEDBACK -->
+    <section class="container pb-5">
+      <div class="alumni-card p-4">
+        <div id="alumniCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+              <div class="row align-items-center g-4">
+                <div class="col-md-3 text-center">
+                  <img class="avatar" src="https://placehold.co/300x300" alt="Alumni 1" />
+                </div>
+                <div class="col-md-9">
+                  <h4 class="alumni-name mb-1">Aisyah Binti Rahman</h4>
+                  <div class="mb-3 fw-semibold">Diploma in Maritime Operations</div>
+                  <p class="mb-0">“Pensyarah banyak membantu dan silibusnya memang selari dengan industri. Saya dapat kerja dalam tempoh singkat selepas tamat pengajian.”</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="carousel-item">
+              <div class="row align-items-center g-4">
+                <div class="col-md-3 text-center">
+                  <img class="avatar" src="https://placehold.co/300x300" alt="Alumni 2" />
+                </div>
+                <div class="col-md-9">
+                  <h4 class="alumni-name mb-1">Daniel Lim</h4>
+                  <div class="mb-3 fw-semibold">B.Eng Oil &amp; Gas</div>
+                  <p class="mb-0">“Exposure industri yang luas dan rangkaian alumni memudahkan saya mendapat peluang kerjaya di syarikat multinasional.”</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row align-items-center g-4">
+                <div class="col-md-3 text-center">
+                  <img class="avatar" src="https://placehold.co/300x300" alt="Alumni 3" />
+                </div>
+                <div class="col-md-9">
+                  <h4 class="alumni-name mb-1">Nurul Izzati</h4>
+                  <div class="mb-3 fw-semibold">Aviation Management</div>
+                  <p class="mb-0">“Kemahiran soft-skill dan praktikal yang saya pelajari di sini sangat membantu semasa internship dan seterusnya ditawarkan kerja.””</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center mt-3 gap-2">
+            <button class="btn btn-outline-secondary btn-sm" data-bs-target="#alumniCarousel" data-bs-slide="prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="btn btn-outline-secondary btn-sm" data-bs-target="#alumniCarousel" data-bs-slide="next"><i class="bi bi-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4">
+      <div class="container text-center small">
+        <div>© <span id="year"></span> Netherlands Maritime University College (NMUC). All Rights Reserved.</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- COUNTER SCRIPT (runs when section is visible) -->
+  <script>
+    (function(){
+      const counters = document.querySelectorAll('.num');
+      const speed = 600; // smaller = faster
+      let started = false;
+
+      const animate = () => {
+        counters.forEach(counter => {
+          const update = () => {
+            const target = +counter.getAttribute('data-target');
+            const current = +counter.innerText.replace(/,/g,'');
+            const inc = Math.ceil(target / speed);
+            if(current < target){
+              counter.innerText = (current + inc).toLocaleString('en-US');
+              requestAnimationFrame(update);
+            } else {
+              counter.innerText = target.toLocaleString('en-US');
+            }
+          };
+          update();
+        });
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting && !started){
+            started = true; animate(); io.disconnect();
+          }
+        });
+      }, { threshold: .3 });
+
+      const metrics = document.querySelector('.metric');
+      if(metrics) io.observe(metrics);
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+  <!-- CONTACT MODAL -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactLabel">Hubungi Kami</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-4">
+
+          <div class="col-lg-6">
+            <h6 class="fw-bold mb-2">1. Johor Bahru</h6>
+            <p class="mb-3">
+              Netherlands Maritime University College (NMUC)<br>
+              Level 11-14, Kotaraya Office Tower Galleria@Kotaraya, Jalan Abdullah Ibrahim, 80888, Johor
+            </p>
+            <h6 class="fw-bold mb-2">2. Kuala Lumpur</h6>
+            <p class="mb-3">
+              Netherlands Maritime University College (NMUC)<br>
+              Menara PGRM, Level 5, No.8, Jalan Pudu Ulu, Cheras, 56100 Kuala Lumpur
+            </p>
+
+            <div id="contactCarousel" class="carousel slide glass" data-bs-ride="carousel">
+              <div class="carousel-inner poster-frame">
+                <div class="carousel-item active">
+                  <img src="images/bangunannmuc1.jpg" class="d-block w-100" alt="Bangunan NMUC 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/bangunannmuc2.jpg" class="d-block w-100" alt="Bangunan NMUC 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/bangunannmuc3.jpg" class="d-block w-100" alt="Bangunan NMUC 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#contactCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#contactCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <h6 class="fw-bold mb-3">Media Sosial</h6>
+            <div class="d-flex flex-column gap-3">
+              <a class="contact-pill text-decoration-none" href="https://www.facebook.com/" target="_blank" rel="noopener">
+                <i class="bi bi-facebook fs-5"></i> Facebook
+              </a>
+              <a class="contact-pill text-decoration-none" href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <i class="bi bi-instagram fs-5"></i> Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <h6 class="fw-bold mb-3">Nombor Untuk Dihubungi</h6>
+            <ul class="list-unstyled contact-list">
+              <li><i class="bi bi-telephone me-2"></i>Pejabat: <a href="tel:+6070000000" class="link-dark">+60 19-7204720</a></li>
+              <li><i class="bi bi-printer me-2"></i>Faks: 07-2722020</li>
+              <li><i class="bi bi-envelope me-2"></i>Email: <a href="mailto:info@nmuc.edu.my" class="link-dark">ibrahim@nmuc.edu.my</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
