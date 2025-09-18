@@ -120,6 +120,19 @@
     .cta-btn{ background: var(--teal-900); border:none; }
     .cta-btn:hover{ background:#0d5e65; }
 
+      .fixed-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050; /* stays above carousel and navbar */
+    border-radius: 50px;
+    background: var(--teal-900);
+    border: none;
+  }
+  .fixed-cta:hover {
+    background: #0d5e65;
+  }
+
     /* ======= COUNTERS ======= */
     .metric{
       background: var(--bg-overlay);
@@ -290,7 +303,7 @@
         </div>
         <div class="text-center">
           <!-- Update this link to your real Google Form URL -->
-          <a href="https://forms.gle/your-google-form" class="btn btn-lg btn-primary cta-btn px-5 py-3">Daftar Sekarang</a>
+          <a href="https://forms.gle/p7TqGRb8CHCPUk2u5" class="btn btn-lg btn-primary fixed-cta px-4 py-3">Daftar Sekarang</a>
         </div>
       </div>
     </section>
@@ -498,5 +511,6 @@
 
 </body>
 </html>
+
 
 
